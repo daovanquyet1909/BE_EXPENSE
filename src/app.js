@@ -8,7 +8,9 @@ const app = express();
 app.use(bodyParser.json());
 
 connectDB();
-
+app.get('/api', (req,res)=>{
+    res.send('hello');
+})
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/expenses', require('./routes/expense'));
 app.use('/api/wallets', require('./routes/wallet'));
